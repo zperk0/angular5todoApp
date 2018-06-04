@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    <strong>{{itemTodo.title}}</strong>
+  </div>
+  <div class="card-body">
+    <div class="row">{{itemTodo.description}}</div>
+    <br>
+    <div class="row">
+      <button class="btn btn-primary" (click) = "itemTodo.done = !itemTodo.done" >
+        <span *ngIf = "!itemTodo.done">Mark as done</span>
+        <span *ngIf = "itemTodo.done">Do again</span>
+      </button>
+    </div>
+  </div>
+</div>
