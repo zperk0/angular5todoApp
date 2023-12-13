@@ -1,37 +1,31 @@
 <nav class="navbar navbar-dark bg-primary">
-  <span class="navbar-brand">
-    Another to do application.
-  </span>
+  <span class="navbar-brand"> Another to do application. </span>
 </nav>
 <div class="container-fluid">
   <div>
     <div class="col-md-8 offset-md-2">
-      <h2>Enter something you want to do.</h2>
+      <h2>Enter something you want tero do.</h2>
       <app-to-do-form></app-to-do-form>
     </div>
   </div>
-  <div *ngIf = "returnUndoneItems().length" class = "row">
+  <div *ngIf="returnUndoneItems().length" class="row">
     <div class="col-md-12">
-        <h2>Here's your list of things to do</h2>
-    </div> 
-    <ng-container *ngFor = 'let todo of returnUndoneItems()'>
-        <div class="col-md-4" *ngIf = "!todo.done">
-          <app-to-do [itemTodo] = 'todo'>
-
-          </app-to-do>
-        </div>
+      <h2>Here's your list of things to do</h2>
+    </div>
+    <ng-container *ngFor="let todo of returnUndoneItems()">
+      <div class="col-md-4" *ngIf="!todo.done">
+        <app-to-do [itemTodo]="todo"> </app-to-do>
+      </div>
     </ng-container>
   </div>
-  <div *ngIf = "returnDoneItems().length" class = "row">
+  <div *ngIf="returnDoneItems().length" class="row">
     <div class="col-md-12">
       <h2>Here's your list of things you've done!</h2>
     </div>
-    <ng-container *ngFor = 'let todo of returnDoneItems()'>
-        <div class="col-md-4" *ngIf = "todo.done">
-          <app-to-do [itemTodo] = 'todo'>
-
-          </app-to-do>
-        </div>
+    <ng-container *ngFor="let todo of returnDoneItems()">
+      <div class="col-md-4" *ngIf="todo.done">
+        <app-to-do [itemTodo]="todo"> </app-to-do>
+      </div>
     </ng-container>
   </div>
 </div>
